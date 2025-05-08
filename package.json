@@ -1,0 +1,22 @@
+{
+  "name": "community-portal",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "community-portal": "file:",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "description": "## Overview",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

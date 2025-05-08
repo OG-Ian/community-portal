@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<section class="text-center mb-5">
+  <h1 class="display-4 fw-bold">Welcome to the Community Portal</h1>
+  <p class="lead text-muted">Connecting people, promoting events, and building a better future together.</p>
+</section>
+
+<h3 class="mb-4">Featured Events</h3>
+<div class="row">
+  <% events.slice(0, 3).forEach(event => { %> <!-- Show first 3 events -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= event.title %></h5>
+          <p class="card-text text-muted small">
+            <i class="bi bi-calendar-event me-1"></i> <%= event.date %><br>
+            <i class="bi bi-geo-alt me-1"></i> <%= event.location %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+<%- include('../partials/footer') %>
