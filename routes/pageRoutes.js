@@ -18,6 +18,25 @@ module.exports = ({ teamMembers, events, messages }) => {
     res.render('events', { events });
   });
 
+  // Event Detail Page
+  router.get('/events/:index', (req, res) => {
+    const index = parseInt(req.params.index);
+    const event = events[index];
+
+    if (!event) {
+      return res.status(404).send('Event not found');
+    }
+
+    const prevIndex = index > 0 ? index - 1 : null;
+    const nextIndex = index < events.length - 1 ? index + 1 : null;
+
+    res.render('eventDetail', {
+      event,
+      prevIndex,
+      nextIndex
+    });
+  });
+
   // Contact Page
   router.get('/contact', (req, res) => {
     res.render('contact');

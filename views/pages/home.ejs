@@ -7,12 +7,18 @@
 
 <h3 class="mb-4">Featured Events</h3>
 <div class="row">
-  <% events.slice(0, 3).forEach(event => { %> <!-- Show first 3 events -->
+  <% events.slice(0, 3).forEach((event, index) => { %>    <!-- Show first 3 events -->
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm border-0">
-        <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>">
+        <a href="/events/<%= index %>">
+          <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>">
+        </a>
         <div class="card-body">
-          <h5 class="card-title"><%= event.title %></h5>
+          <h5 class="card-title">
+            <a href="/events/<%= index %>" class="text-decoration-none text-dark">
+              <%= event.title %>
+            </a>
+          </h5>
           <p class="card-text text-muted small">
             <i class="bi bi-calendar-event me-1"></i> <%= event.date %><br>
             <i class="bi bi-geo-alt me-1"></i> <%= event.location %>

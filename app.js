@@ -18,31 +18,31 @@ const teamMembers = [
 const events = [
   {
     title: "Community Clean-up Day",
-    date: "2025-05-10",
+    date: "2025-05-15",
     location: "Local Park",
     image: "/images/cleanup.jpg",
   },
   {
     title: "Health Awareness Workshop",
-    date: "2025-05-15",
+    date: "2025-05-20",
     location: "Community Hall",
     image: "/images/health.jpg",
   },
   {
     title: "Youth Talent Show",
-    date: "2025-05-20",
+    date: "2025-05-25",
     location: "Civic Centre",
     image: "/images/talent.jpg",
   },
   {
     title: "Tech for Teens",
-    date: "2025-05-25",
+    date: "2025-05-31",
     location: "Library Auditorium",
     image: "/images/tech.jpg",
   },
   {
     title: "Elderly Care Awareness",
-    date: "2025-05-30",
+    date: "2025-06-06",
     location: "Sunrise Old Age Home",
     image: "/images/elderly.jpg",
   },

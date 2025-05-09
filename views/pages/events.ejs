@@ -8,12 +8,18 @@
   </section>
   
   <div class="row">
-    <% events.forEach(event => { %>
+    <% events.forEach((event, index) => { %>
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100 shadow-sm border-0">
-          <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>">
+          <a href="/events/<%= index %>">
+            <img src="<%= event.image %>" class="card-img-top" alt="<%= event.title %>">
+          </a>
           <div class="card-body">
-            <h5 class="card-title"><%= event.title %></h5>
+            <h5 class="card-title">
+              <a href="/events/<%= index %>" class="text-decoration-none text-dark">
+                <%= event.title %>
+              </a>
+            </h5>
             <ul class="list-unstyled text-muted small mb-0">
               <li><i class="bi bi-calendar-event me-2"></i><%= event.date %></li>
               <li><i class="bi bi-geo-alt me-2"></i><%= event.location %></li>
