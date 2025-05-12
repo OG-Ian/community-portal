@@ -45,6 +45,7 @@ module.exports = ({ teamMembers, events, messages }) => {
 
 // Contact Form Submission (POST)
 router.post('/contact', (req, res) => {
+  const messages = []; // Contact form submissions
     const { name, email, message } = req.body;
 
     if (name && email && message) {
@@ -55,6 +56,7 @@ router.post('/contact', (req, res) => {
         date: new Date().toLocaleString(),
       });
     }
+    console.log(messages)
 
     res.redirect('/thankyou');
   });
