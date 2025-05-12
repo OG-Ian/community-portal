@@ -1,13 +1,22 @@
 const express = require('express');
 
+// Adding Random event for homepage, shuffle events
+function getRandomEvent(events) {
+  const index = Math.floor(Math.random() * events.length);
+  return { event: events[index], index };
+}
+
+
 module.exports = ({ teamMembers, events, messages }) => {
   const router = express.Router();
 
-  // Home Page
+  // Home Page - Random Event
   router.get('/', (req, res) => {
-    res.status(200).render('home',{events});
-
+    const { event, index } = getRandomEvent(events);
+    res.render('home', { event, index, teamMembers });
   });
+  
+
 
   // About Page
   router.get('/about', (req, res) => {
@@ -68,5 +77,20 @@ router.post('/contact', (req, res) => {
     res.status(200).render('thankyou');
   });
 
+// Admin Form Page
+router.get('/admin', (req, res) => {
+  res.render('admin');
+});
+
+// Admin POST
+router.post('/admin', (req, res) => {
+  const { title, date, location, image } = req.body;
+  if (title && date && location && image) {
+    events.push({ title, date, location, image });
+  }
+  res.redirect('/events');
+});
+
   return router;
 };
+

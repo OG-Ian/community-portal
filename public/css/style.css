@@ -47,6 +47,10 @@ body {
     border-top-right-radius: 0.75rem;
   }
   
+  #featuredEvent {
+    transition: opacity 0.5s ease-in-out;
+  }  
+
   /* Forms */
   form .form-label {
     font-weight: 500;

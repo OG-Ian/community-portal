@@ -7,15 +7,16 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
-// In-memory data
+// In-memory data arrays
 const teamMembers = [
-  { name: "Ian", role: "Team Lead" },
-  { name: "Hendrik", role: "Backend Developer" },
-  { name: "Kutenda", role: "Frontend Developer" },
-  { name: "Marius", role: "Documentation Manager" },
+  { name: "Ian", role: "Team Lead", image: "ian.jpg" },
+  { name: "Hendrik", role: "Backend Developer", image: "hendrik.jpg" },
+  { name: "Kutenda", role: "Frontend Developer", image: "kutenda.jpg" },
+  { name: "Marius", role: "Documentation Manager", image: "marius.jpg" }
 ];
 
-const events = [
+
+let events = [
   {
     title: "Community Clean-up Day",
     date: "2025-05-15",
