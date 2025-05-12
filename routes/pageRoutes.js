@@ -5,18 +5,19 @@ module.exports = ({ teamMembers, events, messages }) => {
 
   // Home Page
   router.get('/', (req, res) => {
-    res.status(200)
-    res.render('home', { events });
+    res.status(200).render('home',{events});
+
   });
 
   // About Page
   router.get('/about', (req, res) => {
-    res.render('about', { teamMembers });
+    res.status(200).render('about', { teamMembers })
+  
   });
 
   // Events Page
   router.get('/events', (req, res) => {
-    res.render('events', { events });
+    res.status(200).render('events', { events });
   });
 
   // Event Detail Page
@@ -31,7 +32,7 @@ module.exports = ({ teamMembers, events, messages }) => {
     const prevIndex = index > 0 ? index - 1 : null;
     const nextIndex = index < events.length - 1 ? index + 1 : null;
 
-    res.render('eventDetail', {
+    res.status(200).render('eventDetail', {
       event,
       prevIndex,
       nextIndex
@@ -40,7 +41,7 @@ module.exports = ({ teamMembers, events, messages }) => {
 
   // Contact Page
   router.get('/contact', (req, res) => {
-    res.render('contact');
+    res.status(200).render('contact');
   });
 
 // Contact Form Submission (POST)
@@ -55,15 +56,16 @@ router.post('/contact', (req, res) => {
         message,
         date: new Date().toLocaleString(),
       });
+      return res.status(302).redirect('/thankyou')
     }
     console.log(messages)
 
-    res.redirect('/thankyou');
+    res.status(400).send('All fields are required');
   });
 
   // Thank You Page
   router.get('/thankyou', (req, res) => {
-    res.render('thankyou');
+    res.status(200).render('thankyou');
   });
 
   return router;
