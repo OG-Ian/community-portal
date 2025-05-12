@@ -35,8 +35,8 @@ A dynamic and responsive portal for local communities to stay informed, discover
 | Name     | Role                  |
 |----------|-----------------------|
 | Ian      | Team Lead & Dev       |
-| Hendrik  | Backend Developer     |
-| Kutenda  | Frontend Developer    |
+| Hendrik  | Frontend Developer     |
+| Kutenda  | Backend Developer    |
 | Marius   | Documentation Manager |
 
 > Team photos are conditionally displayed based on availability.
