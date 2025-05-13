@@ -51,6 +51,10 @@ body {
     transition: opacity 0.5s ease-in-out;
   }  
 
+  #featuredEvent:hover{
+    background-color: #f7f7f7;
+  }
+
   /* Forms */
   form .form-label {
     font-weight: 500;
