@@ -1,5 +1,9 @@
 const express = require('express');
 
+//for adding/deleting events
+const validCodes = ["ian-010", "hendrik-010", "kutenda-010", "marius-010"];
+
+
 // Adding Random event for homepage, shuffle events
 function getRandomEvent(events) {
   const index = Math.floor(Math.random() * events.length);
@@ -13,7 +17,7 @@ module.exports = ({ teamMembers, events, messages }) => {
   // Home Page - Random Event
   router.get('/', (req, res) => {
     const { event, index } = getRandomEvent(events);
-    res.render('home', { event, index, teamMembers });
+    res.render('home', { featuredEvent: event, index, teamMembers });
   });
   
 
@@ -83,12 +87,46 @@ router.get('/admin', (req, res) => {
 });
 
 // Admin POST
-router.post('/admin', (req, res) => {
-  const { title, date, location, image } = req.body;
+router.post("/admin", (req, res) => {
+  const { title, date, location, image, code } = req.body;
+  if (!validCodes.includes(code.toLowerCase())) {
+    return res.send("Invalid Developer Code.");
+  }
+
   if (title && date && location && image) {
     events.push({ title, date, location, image });
   }
-  res.redirect('/events');
+  res.redirect("/events");
+});
+
+// Delete Event Page
+router.get("/delete-event", (req, res) => {
+  res.render("deleteEvent", {
+    events,
+    message: "Choose an event to delete.",
+    success: true
+  });
+});
+
+// Delete Event POST
+router.post("/delete-event", (req, res) => {
+  const { title, code } = req.body;
+  if (!validCodes.includes(code.toLowerCase())) {
+    return res.send("Invalid Developer Code.");
+  }
+
+  const initialLength = events.length;
+  const updatedEvents = events.filter(event => event.title !== title);
+
+  if (updatedEvents.length === initialLength) {
+    return res.send("Event not found.");
+  }
+
+  // Clear and repopulate original array to preserve reference
+  events.length = 0;
+  updatedEvents.forEach(event => events.push(event));
+
+  res.redirect("/");
 });
 
   return router;

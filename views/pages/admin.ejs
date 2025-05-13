@@ -1,10 +1,22 @@
 <%- include('../partials/header') %>
 
 <h2 class="mb-4">Add New Event</h2>
+
+<% if (typeof message !== 'undefined') { %>
+  <div class="alert <%= success ? 'alert-success' : 'alert-danger' %> text-center">
+    <%= message %>
+  </div>
+<% } %>
+
+
 <form method="POST" action="/admin" class="mx-auto" style="max-width: 600px;">
   <div class="mb-3">
     <label class="form-label">Title</label>
     <input type="text" name="title" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Code</label>
+    <input type="text" name="code" placeholder="Developer Code" required class="form-control mb-3">
   </div>
   <div class="mb-3">
     <label class="form-label">Date</label>
@@ -22,5 +34,7 @@
     <button type="submit" class="btn btn-success">Add Event</button>
   </div>
 </form>
+
+<a href="/delete-event" class="btn btn-outline-danger mt-3">Delete Event</a>
 
 <%- include('../partials/footer') %>
