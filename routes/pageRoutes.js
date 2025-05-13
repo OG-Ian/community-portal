@@ -59,7 +59,7 @@ module.exports = ({ teamMembers, events, messages }) => {
 
 // Contact Form Submission (POST)
 router.post('/contact', (req, res) => {
-  const messages = []; // Contact form submissions
+
     const { name, email, message } = req.body;
 
     if (name && email && message) {
@@ -71,7 +71,8 @@ router.post('/contact', (req, res) => {
       });
       return res.status(302).redirect('/thankyou')
     }
-    console.log(messages)
+    console.log(messages);
+    
 
     res.status(400).send('All fields are required');
   });
@@ -128,6 +129,16 @@ router.post("/delete-event", (req, res) => {
 
   res.redirect("/");
 });
+router.delete('/events/:index', (req, res) => {
+  const eventID = parseInt(req.params.index);
+
+  if (!isNaN(eventID) && eventID >= 0 && eventID < events.length) {
+    events.splice(eventID, 1);
+  }
+
+  res.redirect('/events');
+});
+
 
   return router;
 };

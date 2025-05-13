@@ -10,6 +10,8 @@ body {
   h1, h2, h3 {
     font-weight: 700;
     color: #222;
+    scroll-margin-top: 60px;
+    margin-top: 60px;
   }
   
   h2.display-5 {
@@ -22,16 +24,29 @@ body {
   
   /* Navbar */
   .navbar {
+<<<<<<< HEAD
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1030;    
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: top 0.4s ease-in-out;
+=======
+    z-index: 69;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+>>>>>>> a5c1faf8c54af64f3d2d5770be5c6c7fdefbe6fd
   }
   
   .nav-link {
     font-weight: 500;
+  }
+
+  #searchInput{
+    margin-top: 75px;
   }
   
   /* Cards */
@@ -85,6 +100,10 @@ body {
   .featured-card:hover p {
     color: #007bff;
   }  
+
+  #featuredEvent:hover{
+    background-color: #f7f7f7;
+  }
 
   /* Forms */
   form .form-label {
