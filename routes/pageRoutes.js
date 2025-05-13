@@ -55,7 +55,7 @@ module.exports = ({ teamMembers, events, messages }) => {
 
 // Contact Form Submission (POST)
 router.post('/contact', (req, res) => {
-  const messages = []; // Contact form submissions
+
     const { name, email, message } = req.body;
 
     if (name && email && message) {
@@ -67,6 +67,7 @@ router.post('/contact', (req, res) => {
       });
       return res.status(302).redirect('/thankyou')
     }
+    console.log(messages);
     
 
     res.status(400).send('All fields are required');
