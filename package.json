@@ -13,7 +13,8 @@
     "body-parser": "^2.2.0",
     "community-portal": "file:",
     "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "method-override": "^3.0.0"
   },
   "description": "## Overview",
   "keywords": [],

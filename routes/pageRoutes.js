@@ -90,6 +90,16 @@ router.post('/admin', (req, res) => {
   }
   res.redirect('/events');
 });
+router.delete('/events/:index', (req, res) => {
+  const eventID = parseInt(req.params.index);
+
+  if (!isNaN(eventID) && eventID >= 0 && eventID < events.length) {
+    events.splice(eventID, 1);
+  }
+
+  res.redirect('/events');
+});
+
 
   return router;
 };
