@@ -45,11 +45,11 @@ function renderEvent(event) {
       <a href="/events/${event.index}">
         <img src="${event.image}" class="card-img-top mb-3 rounded shadow" alt="${event.title}">
       </a>
-      <div class="card-body text-white">
+      <div class="card-body text-grey">
         <h5 class="card-title">
-          <a href="/events/${event.index}" class="text-decoration-none text-white fw-bold">${event.title}</a>
+          <a href="/events/${event.index}" class="text-decoration-none text-grey fw-bold">${event.title}</a>
         </h5>
-        <p class="card-text text-white-50 small">
+        <p class="card-text text-grey-50 small">
           <i class="bi bi-calendar-event me-1"></i> ${event.date}<br>
           <i class="bi bi-geo-alt me-1"></i> ${event.location}
         </p>
