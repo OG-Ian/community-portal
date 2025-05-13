@@ -67,7 +67,7 @@ router.post('/contact', (req, res) => {
       });
       return res.status(302).redirect('/thankyou')
     }
-    console.log(messages)
+    
 
     res.status(400).send('All fields are required');
   });
