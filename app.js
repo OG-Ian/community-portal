@@ -12,9 +12,9 @@ const port = 3000;
 // In-memory data arrays
 const teamMembers = [
   { name: "Ian", role: "Team Lead", image: "ian.jpg" },
-  { name: "Hendrik", role: "Backend Developer", image: "hendrik.jpg" },
-  { name: "Kutenda", role: "Frontend Developer", image: "kutenda.jpg" },
-  { name: "Marius", role: "Documentation Manager", image: "marius.jpg" }
+  { name: "Hendrik", role: "Backend Developer", image: "hendrik.jpeg" },
+  { name: "Kutenda", role: "Frontend Developer", image: "kutenda.jpeg" },
+  { name: "Marius", role: "Documentation Manager", image: "marius.jpeg" }
 ];
 
 // Event Details and Description 
