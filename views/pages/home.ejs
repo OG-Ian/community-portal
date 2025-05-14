@@ -1,13 +1,16 @@
 <%- include('../partials/header') %>
 
-<section class="text-center py-5 bg-light">
+<section class="text-center py-2 bg-light">
   <h1 class="display-4 fw-bold">Welcome to the Community Portal</h1>
   <p class="lead text-muted">Connecting people, promoting events, and building a better future together.</p>
 </section>
 
+ <div class="container text-center">
+    <h2 class="mb-4">Featured Events</h2>
+  </div>
+
 <section id="featuredEvent" class="py-5 text-center">
-  <div class="container">
-    <h2 class="text-white mb-4">Featured Events</h2>  
+  <div class="container">  
     <div class="featured-card mx-auto" style="max-width: 600px;">
       <img src="<%= featuredEvent.image %>" class="img-fluid mb-3" alt="Featured Event">
       <h3><%= featuredEvent.title %></h3>
