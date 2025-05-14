@@ -44,6 +44,7 @@ A dynamic and responsive portal for local communities to stay informed, discover
 ---
 
 ## 📁 Folder Structure
+
 community-portal/
 │
 ├── public/
@@ -71,7 +72,6 @@ community-portal/
 ├── app.js
 └── README.md
 
-
 ## Instructions
 
 1. Run `npm install` to install dependencies.
@@ -79,3 +79,7 @@ community-portal/
 3. Add your own route handlers and middleware as needed.
 4. Open your browser and go to:
 http://localhost:3000
+
+## Team participation
+
+- All team mebers contributed
